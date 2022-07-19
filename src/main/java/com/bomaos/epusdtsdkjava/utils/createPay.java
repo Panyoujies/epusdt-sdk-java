@@ -35,8 +35,8 @@ public class createPay {
         Epusdt dujiao = new Epusdt();
         dujiao.setAmount(new BigDecimal(bigDecimal));
         dujiao.setOrder_id(payId);
-        dujiao.setNotify_url(notify_url + notifyUrl);
-        dujiao.setRedirect_url(notify_url + returnUrl + payId);
+        dujiao.setNotify_url(notify_url + "/api/epusdt/notifyUrl");
+        dujiao.setRedirect_url(notify_url + "/api/epusdt/returnUrl?order_id=" + payId);
         String sign = createSign(dujiao, key);
         dujiao.setSignature(sign);
 
